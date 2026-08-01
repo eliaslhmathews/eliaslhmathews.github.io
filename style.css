@@ -11,9 +11,9 @@ body {
   line-height: 1.5;
   color: #000;
   background: #fff;
-  max-width: 1000px;        /* overall page width — change to taste */
+  max-width: 1700px;        /* overall page width — change to taste */
   margin: 0 auto;
-  padding: 40px 24px 60px;
+  padding: 40px 40px 60px;
 }
 
 a {
@@ -39,10 +39,10 @@ hr {
 }
 
 .portrait {
-  width: 160px;             /* photo size — change to taste */
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;       /* delete this line for a square photo */
+  width: 220px;             /* photo size — change to taste */
+  height: 275px;
+  object-fit: cover;        /* crops to the box above; for the full uncropped
+                               photo, delete this and set height: auto */
   flex-shrink: 0;
 }
 
@@ -75,7 +75,7 @@ hr {
 
 .columns {
   display: flex;
-  gap: 48px;
+  gap: 64px;
   align-items: flex-start;
 }
 
@@ -92,14 +92,26 @@ hr {
   border-bottom: 1px solid #000;
 }
 
-/* ---------- a single project entry ---------- */
+/* ---------- a single project entry ----------
+   Layout: title on top, then image on the left with its description
+   paragraph to the right.
+   -------------------------------------------- */
 
 .project {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 20px 0;
+  padding: 28px 0;
   border-bottom: 1px solid #e5e5e5;
+}
+
+.project h3 {
+  font-size: 23px;
+  font-weight: normal;
+  margin: 0 0 14px;
+}
+
+.project-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 }
 
 .project-thumb {
@@ -107,26 +119,19 @@ hr {
 }
 
 .project-thumb img {
-  width: 120px;             /* thumbnail size — change to taste */
-  height: 90px;
-  object-fit: cover;
+  width: 400px;             /* image size — change to taste.
+                               height: auto keeps the figure's own aspect
+                               ratio, so nothing gets cropped. */
+  height: auto;
   display: block;
   border: 1px solid #ddd;
 }
 
-.project-body {
-  min-width: 0;
-}
-
-.project-body h3 {
-  font-size: 19px;
-  font-weight: normal;
-  margin: 0 0 6px;
-}
-
-.project-body p {
+.project-row p {
+  flex: 1;
+  min-width: 0;             /* keeps long words from blowing out the column */
   margin: 0;
-  font-size: 16px;
+  font-size: 17px;
   color: #333;
 }
 
@@ -176,10 +181,23 @@ footer {
 
 /* ---------- narrow screens: stack everything ---------- */
 
-@media (max-width: 720px) {
-  .columns,
-  .intro {
+/* below this width the two columns can't hold a 400px image side by side,
+   so drop to a single column */
+@media (max-width: 1200px) {
+  .columns {
     flex-direction: column;
-    gap: 24px;
+    gap: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .intro,
+  .project-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-thumb img {
+    width: 100%;            /* image fills the screen width when stacked */
   }
 }
