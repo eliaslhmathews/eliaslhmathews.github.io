@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="180" viewBox="0 0 240 180">
+  <rect width="240" height="180" fill="#eeeeee"/>
+  <rect x="0.5" y="0.5" width="239" height="179" fill="none" stroke="#cccccc"/>
+  <text x="120" y="96" font-family="Times New Roman, Times, serif" font-size="20"
+        fill="#999999" text-anchor="middle">image</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320">
+  <rect width="320" height="320" fill="#eeeeee"/>
+  <circle cx="160" cy="128" r="52" fill="#cccccc"/>
+  <path d="M56 300c0-57 47-96 104-96s104 39 104 96z" fill="#cccccc"/>
+  <text x="160" y="312" font-family="Times New Roman, Times, serif" font-size="16"
+        fill="#999999" text-anchor="middle">portrait</text>
+</svg>
