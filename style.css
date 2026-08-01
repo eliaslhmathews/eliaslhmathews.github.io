@@ -35,19 +35,19 @@ hr {
 .intro {
   display: flex;
   align-items: flex-start;
-  gap: 28px;
+  gap: 48px;
 }
 
 .portrait {
-  width: 220px;             /* photo size — change to taste */
-  height: 275px;
-  object-fit: cover;        /* crops to the box above; for the full uncropped
-                               photo, delete this and set height: auto */
-  flex-shrink: 0;
+  flex: 0 0 42%;            /* photo takes 42% of the page width */
+  width: 42%;
+  height: auto;             /* keeps the photo's own aspect ratio — no cropping */
+  border: 1px solid #ddd;
 }
 
 .intro-text {
   flex: 1;
+  min-width: 0;
 }
 
 .intro-text h1 {
@@ -75,31 +75,40 @@ hr {
 
 .columns {
   display: flex;
-  gap: 64px;
-  align-items: flex-start;
+  gap: 0;
+  align-items: stretch;     /* so the divider line runs the full height */
 }
 
 .column {
   flex: 1;
   min-width: 0;             /* keeps long words from blowing out the column */
+  padding: 0 40px;
+}
+
+.column:first-child {
+  padding-left: 0;
+}
+
+/* the vertical line between the two columns */
+.column:last-child {
+  padding-right: 0;
+  border-left: 1px solid #000;
 }
 
 .column h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: normal;
-  margin: 0 0 4px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #000;
+  margin: 0 0 8px;
 }
 
 /* ---------- a single project entry ----------
-   Layout: title on top, then image on the left with its description
-   paragraph to the right.
+   Layout: title on top, then the image beside its description paragraph.
+   Entries alternate sides down the column: the 1st, 3rd, 5th... have the
+   image on the LEFT, the 2nd, 4th, 6th... have it on the RIGHT.
    -------------------------------------------- */
 
 .project {
   padding: 28px 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 .project h3 {
@@ -110,18 +119,23 @@ hr {
 
 .project-row {
   display: flex;
-  gap: 24px;
-  align-items: flex-start;
+  gap: 28px;
+  align-items: center;
+}
+
+/* every other entry flips the image to the other side */
+.project:nth-of-type(even) .project-row {
+  flex-direction: row-reverse;
 }
 
 .project-thumb {
-  flex-shrink: 0;
+  flex: 0 0 48%;            /* image takes 48% of the column — change to taste */
+  min-width: 0;
 }
 
 .project-thumb img {
-  width: 400px;             /* image size — change to taste.
-                               height: auto keeps the figure's own aspect
-                               ratio, so nothing gets cropped. */
+  width: 100%;              /* height: auto keeps each figure's own aspect
+                               ratio, so nothing gets cropped */
   height: auto;
   display: block;
   border: 1px solid #ddd;
@@ -181,23 +195,41 @@ footer {
 
 /* ---------- narrow screens: stack everything ---------- */
 
-/* below this width the two columns can't hold a 400px image side by side,
-   so drop to a single column */
-@media (max-width: 1200px) {
+/* below this width the columns get too narrow, so stack them */
+@media (max-width: 1000px) {
   .columns {
     flex-direction: column;
-    gap: 0;
+  }
+
+  .column {
+    padding: 0;
+  }
+
+  /* the divider becomes a horizontal rule between the stacked sections */
+  .column:last-child {
+    border-left: 0;
+    border-top: 1px solid #000;
+    margin-top: 32px;
+    padding-top: 32px;
   }
 }
 
+/* phones: stack the photo and each image above its text */
 @media (max-width: 720px) {
   .intro,
-  .project-row {
+  .project-row,
+  .project:nth-of-type(even) .project-row {
     flex-direction: column;
+    align-items: stretch;
     gap: 20px;
   }
 
-  .project-thumb img {
-    width: 100%;            /* image fills the screen width when stacked */
+  .portrait {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .project-thumb {
+    flex-basis: auto;
   }
 }
