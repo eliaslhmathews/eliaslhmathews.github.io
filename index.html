@@ -19,13 +19,51 @@
     <h1>Elias Huseby</h1>
     <p class="affiliation">PhD Student, Stanford University - Contact huseby [at] stanford [dot] edu</p>
     <p class="interests">
-      Fluid Mechanics &middot; Dynamical Systems &middot; Statistical Mechanics &middot; Machine Learning
+      Fluid Mechanics, Dynamical Systems, Statistical Mechanics, Machine Learning
     </p>
     <p class="blurb">
-      Currently a 2nd year PhD student in Environmental Fluid Mechanics at Stanford University, with an MS in Computational and Mathematical Engineering from Stanford (2026) and a BA in Physics from Wesleyan University (2024). After a mix of computational neuroscience and experimental fluid mechanics as an undergraduate, I am now focused on developing theory to describe multi-scale fluid systems.
+      Currently a 2nd year PhD student in Environmental Fluid Mechanics at Stanford University, with an MS in Computational and Mathematical
+      Engineering from Stanford (2026) and a BA in Physics from Wesleyan University (2024). After a mix of computational neuroscience and
+      experimental fluid mechanics as an undergraduate, I am now focused on developing theory to describe multi-scale fluid systems.
+    </p>
+
+    <p class="blurb">
+      Neural networks are efficient high dimensional function approximators which motivate the classification of problems as "data sparse" or "data rich".
+      Traditional methods for developing physical theories, by perturbing conservation laws, are most relevant in the data sparse regime.
+      Centuries of clever tricks have been developed to approach data sparse problems, but only recently has equivalent progress been made in the data rich regime.
+      I have found both approaches, and the problems they are best suited for, fascinating and am working to develop and apply methods in both regimes.
+    </p>
+
+    <p class="blurb">
+      I am especially excited about research that invites new physical systems into the partial differential equations family, typically by a process known as "coarse-graining".
+      If your system behaves unusually smoothly when you squint at it from far away, let me know! There's likely a PDE hiding somewhere nearby.
     </p>
   </div>
 </header>
+
+<hr>
+
+<!-- =====================================================================
+     WRITING  —  a flat list of posts, newest at the top.
+
+     To add a post:
+       1. Copy posts/TEMPLATE.html to posts/your-post-name.html
+       2. Fill in its title, date, and text
+       3. Add one <li> below, at the top of the list
+
+     The datetime="YYYY-MM-DD" attribute is the machine-readable date; the
+     text between the <time> tags is what actually shows on the page.
+     ===================================================================== -->
+<section class="writing">
+  <ul class="post-list">
+
+    <li>
+      <time datetime="2026-07-15">Jul 15, 2026</time>
+      <a href="posts/first-post.html">Coarsegraining to Build Simple Models</a>
+    </li>
+
+  </ul>
+</section>
 
 <hr>
 
@@ -50,10 +88,17 @@
           What does the ocean look like on scales of 1 micron to 1 centimeter? Here, I am developing a quantitative theory to account for the effect of microorganisms swimming and dying in generating sustained microscopic fluctuations.  
         </p>
       </div>
+
+      <div class="citations">
+        <ul>
+          <!-- Add a citation by copying one <li> block below. -->
+          <li>In preparation.</li>
+        </ul>
+      </div>
     </article>
 
     <article class="project">
-      <h3><a href="projects/sparse-one.html">Chiral Particles</a></h3>
+      <h3><a href="projects/sparse-one.html">Effects of Mirror Symmetry Breaking on Particle-Fluid Interactions</a></h3>
       <div class="project-row">
         <a class="project-thumb" href="projects/sparse-one.html">
           <img src="images/Paper_Helica.png" alt="">
@@ -61,6 +106,23 @@
         <p>
           How does a particle's shape determine the pattern it traces as it falls? Here we show that particles which differ from their mirror image (like a propeller or a spiral) can trace complex trajectories due to their broken symmetry.          
         </p>
+      </div>
+
+      <div class="citations">
+        <ul>
+          <li>
+            <strong>E. Huseby</strong>, J. Gissinger, F. Candelier, N. Pujara, G. Verhille, B. Mehlig, G. Voth
+            <em>Helical ribbons: Simple chiral sedimentation.</em>
+            Physical Review Fluids (2025).
+            <a href="https://arxiv.org/abs/2403.18157">arXiv</a>
+          </li>
+          <li>
+            <strong>E. Huseby</strong>, P. Mathier, M. Das, A. Menezes, T. Witkamp, Z. Wang, B. Mehlig, G. Voth
+            <em>Bifurcations in Stokes Flow Sedimentation.</em>
+            arXiv:2604.03193 (2026).
+            <a href="https://arxiv.org/abs/2604.03193">arXiv</a>
+          </li>
+        </ul>
       </div>
     </article>
 
@@ -80,7 +142,32 @@
           Advection describes the transport of information by a velocity field, and is a fundamental process in flow physics. We study this process in Aurora, a foundation model for atmospheric dynamics, and discover "advection heads" which appear to be responsible for implementing this physical process.
         </p>
       </div>
+
+      <div class="citations">
+        <ul>
+          <li>
+            T. MacMillan, <strong>E. Huseby</strong>, S. Takatori, N. T. Ouellette.
+            <em>Advection Heads in an Atmosphere Foundation Model.</em>
+            2026 Conference on Physics and AI (PAI26).
+            <a href="https://openreview.net/forum?id=2jAjCvjr3j#discussion">paper</a>
+          </li>
+        </ul>
+      </div>
     </article>
+    <!-- <article class="project">
+      <h3><a href="projects/rich-one.html">Particles to Fields</a></h3>
+      <div class="project-row">
+        <a class="project-thumb" href="projects/rich-one.html">
+          <img src="images/adv.png" alt="">
+        </a>
+        <p>
+          Can a system's macroscopic behavior be predicted using statistical information about its members? 
+          For systems in equilibrium, where there is no net current between states, the answer is a resounding 'yes'. The fluctuation-dissipation theorem connects the fluctuations experienced by a particle connected to the system's to the macroscopic transport coefficients.
+          For systems out of equilbrium, where states are exchanged irreversibly, there is no such easy guarentee. In this current project, we 
+        </p>
+      </div>
+    </article> -->
+
   </section>
 
 </main>
@@ -91,3 +178,5 @@
 
 </body>
 </html>
+
+

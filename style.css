@@ -26,7 +26,7 @@ a:hover {
 
 hr {
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #000;   /* same black as the column divider */
   margin: 36px 0;
 }
 
@@ -69,6 +69,65 @@ hr {
 
 .blurb {
   margin-top: 16px;
+}
+
+/* ---------- writing: the post list between the two dividers ---------- */
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 5px 0;           /* tight rows */
+}
+
+.post-list time {
+  flex: 0 0 130px;          /* fixed date column, so titles line up */
+  color: #666;
+  font-size: 16px;
+}
+
+.post-list a {
+  font-size: 19px;
+  text-decoration: none;
+}
+
+.post-list a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- a post page ---------- */
+
+.post {
+  max-width: 46em;          /* comfortable reading measure */
+}
+
+.post h1 {
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0 0 6px;
+}
+
+.post .post-date {
+  color: #666;
+  margin: 0 0 28px;
+}
+
+.post p {
+  margin: 0 0 16px;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd;
+  margin: 20px 0;
 }
 
 /* ---------- two columns ---------- */
@@ -147,6 +206,48 @@ hr {
   margin: 0;
   font-size: 17px;
   color: #333;
+}
+
+/* ---------- citation box under a project ---------- */
+
+.citations {
+  margin-top: 20px;
+  padding: 14px 20px;
+  border: 1px solid #000;
+  background: #fafafa;
+}
+
+.citations h4 {
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.citations ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.citations li {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #333;
+  padding-left: 18px;
+  text-indent: -18px;       /* hanging indent, like a reference list */
+  margin-bottom: 10px;
+}
+
+.citations li:last-child {
+  margin-bottom: 0;
+}
+
+/* your own name, picked out of the author list */
+.citations strong {
+  font-weight: 600;
 }
 
 /* ---------- project detail pages ---------- */

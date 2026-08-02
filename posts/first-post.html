@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title of your first post &mdash; Elias Huseby</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- LaTeX support (MathJax). Inline: $...$   Display: $$...$$ -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<p class="back-link"><a href="../index.html">&larr; Back to home</a></p>
+
+<article class="post">
+
+  <h1>Coarsegraining to Build Simple Models</h1>
+  <p class="post-date">August 2, 2026</p>
+
+  <p>
+
+    Burger's equation is arguably the simplest nonlinear partial differential equation and is often used as a stepping stone on the way to more difficult PDEs. Most notably, the system can develop shocks where the velocity field becomes multivalued, and motivates the introduction of "weak formulations" which can handle non-smooth solutions. 
+  </p>
+  <p>
+    Here, I will instead use the Burger's equation to introduce coarse-graining, a method to turn the equations of motion of a particle into those of a field. Approaching this problem from the perspective of a particle makes some of the counterintuitive aspects of the PDE problem feel physically obvious.
+  </p>
+  <p>
+    Consider a particle with initial position $x_i(0)$ and velocity $v_i(0)$, with the index $i$ denoting the vector component, whose dynamics are governed by
+    $$ \frac{dV_{i}(t)}{dt} = 0 \quad \frac{dX_{i}(t)}{dt} = V_{i}(t)= V_{i}(0) $$
+    we can define a velocity field, some $u_i(x,t)$ which has a vector value at every position and time, and constrain it to match the particle's velocity when their positions and times coincide
+    $$ u_i(X(t),t) = \frac{dX_{i}(t)}{dt} = V_{i}(0)$$
+    We can derive the evolution equation for $u_i$ by differentiating and using the chain rule,
+    $$ \frac{d}{dt} u_i(X(t),t) = \frac{\partial}{\partial t}u_i + \frac{dX_{j}(t)}{dt}\frac{\partial}{\partial x_j} u_i = 0$$
+    which can be simplified using the constraint on $u_i(x,t)$ to get$$\partial_t u_i + u_j\partial_ju_i = 0 $$The partial differential equation, called Burger's Equation, above is valid for any position and time $(x,t)$ occupied by exactly one particle. If we release a single particle, then the equation is valid at all times, but vanishingly few positions. If we release a particle from every point in the domain, the equation is valid at every position, but only for the time it takes one particle to catch up to its neighbor with a different velocity (at which point $u(x,t)$ becomes multivalued). 
+  </p>
+  <p>
+    We have now derived Burger's Equation as a continuum model of non-interacting ballistic particles. Physically, we have assumed that particle interactions are weak or short range. When two particles occupy the same $(x,t)$, no interaction is weak enough or short ranged enough to be neglected and new physics is clearly necessary.
+    <!-- We can get to the poisson, heat, and wave equations from a different direction.
+  </p>
+    Imagine a particle taking a random walk on a 2 dimensinal lattice.
+
+    We can expand
+
+    And then truncate the resulting series
+
+    to get: -->
+  </p>
+  <p>
+    For our equation to be a useful model of a real system we need to solve the collision problem, which requires us to specify new information about the particles.
+  </p>
+
+
+
+
+
+
+
+</article>
+
+<footer>
+  <p>&copy; 2026 Elias Huseby</p>
+</footer>
+
+</body>
+</html>

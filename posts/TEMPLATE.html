@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post title &mdash; Elias Huseby</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- LaTeX support (MathJax). Inline math: $...$ or \(...\)
+       Display math: $$...$$ or \[...\]
+       Delete these two <script> blocks if a page has no math. -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<!-- =====================================================================
+     POST TEMPLATE
+
+     1. Copy this file to posts/your-post-name.html
+     2. Change the <title> above, the <h1>, and the date
+     3. Write the post in the <p> tags below
+     4. Add a matching <li> to the list in index.html
+
+     Paths need "../" because this file sits one folder down from the root.
+     ===================================================================== -->
+
+<p class="back-link"><a href="../index.html">&larr; Back to home</a></p>
+
+<article class="post">
+
+  <h1>Post title</h1>
+  <p class="post-date">Month D, YYYY</p>
+
+  <p>
+    First paragraph. Add as many more as you like, each in its own
+    &lt;p&gt;...&lt;/p&gt;.
+  </p>
+
+  <p>
+    LaTeX works inline, like $\nabla \cdot \mathbf{u} = 0$, and as a display
+    equation on its own line:
+  </p>
+
+  $$
+    \frac{\partial \mathbf{u}}{\partial t}
+      + (\mathbf{u} \cdot \nabla)\mathbf{u}
+      = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{u}
+  $$
+
+  <!-- For an image:
+       <img src="../images/your-figure.png" alt="">  -->
+
+</article>
+
+<footer>
+  <p>&copy; 2026 Elias Huseby</p>
+</footer>
+
+</body>
+</html>
