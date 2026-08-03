@@ -43,23 +43,19 @@
     $$ u_i(X(t),t) = \frac{dX_{i}(t)}{dt} = V_{i}(0)$$
     We can derive the evolution equation for $u_i$ by differentiating and using the chain rule,
     $$ \frac{d}{dt} u_i(X(t),t) = \frac{\partial}{\partial t}u_i + \frac{dX_{j}(t)}{dt}\frac{\partial}{\partial x_j} u_i = 0$$
-    which can be simplified using the constraint on $u_i(x,t)$ to get$$\partial_t u_i + u_j\partial_ju_i = 0 $$The partial differential equation, called Burger's Equation, above is valid for any position and time $(x,t)$ occupied by exactly one particle. If we release a single particle, then the equation is valid at all times, but vanishingly few positions. If we release a particle from every point in the domain, the equation is valid at every position, but only for the time it takes one particle to catch up to its neighbor with a different velocity (at which point $u(x,t)$ becomes multivalued). 
+    which can be simplified using the constraint on $u_i(x,t)$ to get$$\partial_t u_i + u_j\partial_ju_i = 0 $$The partial differential equation, called Burger's Equation, above is valid for any position and time $(x,t)$ occupied by exactly one particle. If we release a single particle, then the equation is valid at all times, but vanishingly few positions. 
+    If we release a particle from every point in the domain, the equation is valid at every position, but up until the particles collide and $u(x,t)$ becomes multivalued (when one particle catches up to its neighbor with a different velocity).
   </p>
   <p>
-    We have now derived Burger's Equation as a continuum model of non-interacting ballistic particles. Physically, we have assumed that particle interactions are weak or short range. When two particles occupy the same $(x,t)$, no interaction is weak enough or short ranged enough to be neglected and new physics is clearly necessary.
-    <!-- We can get to the poisson, heat, and wave equations from a different direction.
+    Physically, we've discovered that when two particles occupy the same $(x,t)$, no interaction is short or weak enough to be neglected.
+    To resolve the collision problem, we must specify new information about the particles. In a pure PDEs approach, this is the point at which a variational principle is used to select the correct solution, but from a particle perspective we are simply choosing an interaction rule (to me at least, this is significantly more intuitive).
   </p>
-    Imagine a particle taking a random walk on a 2 dimensinal lattice.
 
-    We can expand
-
-    And then truncate the resulting series
-
-    to get: -->
-  </p>
   <p>
-    For our equation to be a useful model of a real system we need to solve the collision problem, which requires us to specify new information about the particles.
+    To do so,
+
   </p>
+
 
 
 
