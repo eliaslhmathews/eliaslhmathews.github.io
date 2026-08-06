@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title of your first post &mdash; Elias Huseby</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- LaTeX support (MathJax). Inline: $...$   Display: $$...$$ -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<p class="back-link"><a href="../index.html">&larr; Back to home</a></p>
+
+<article class="post">
+
+  <h1>Koopman Operators and Kernels</h1>
+  <p class="post-date">August 2, 2026</p>
+
+  <p>
+Imagine we have a system of equations for the state $\phi_i$ whose index can represent a set of particle positions, the components of a network, or even a discretized partial differential equation. We can write a general evolution equation as
+$$ \frac{d}{dt} \phi_i = f_i(\phi)$$ where in $f_i(\phi)$ is a nonlinear function of the entire state. 
+
+We can define a scalar field $g(\phi)$ over the state space $\phi$ and ask about its evolution instead. Using the chain rule we have $$  \frac{d}{dt} g(\phi) = (\frac{d \phi_i}{dt}\frac{\partial }{\partial\phi_i})g = (u_i\partial_i)g = Lg $$where the last two equalities illustrate how the nonlinear system has been transformed into a linear transport equation, with a velocity field in state space $u_i =\frac{d \phi_i}{dt}$. Instead of evolving the state according to its own nonlinear dynamics, we are evolving a distribution over states.
+</p>
+
+
+
+
+
+
+
+
+
+</article>
+
+<footer>
+  <p>&copy; 2026 Elias Huseby</p>
+</footer>
+
+</body>
+</html>

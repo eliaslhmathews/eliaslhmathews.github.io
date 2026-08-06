@@ -37,17 +37,17 @@
     Here, I will instead use the Burger's equation to introduce coarse-graining, a method to turn the equations of motion of a particle into those of a field. Approaching this problem from the perspective of a particle makes some of the counterintuitive aspects of the PDE problem feel physically obvious.
   </p>
   <p>
-    Consider a particle with initial position $x_i(0)$ and velocity $v_i(0)$, with the index $i$ denoting the vector component, whose dynamics are governed by
+    Consider a particle with initial position $X_i(0)$ and velocity $V_i(0)$, with the index $i$ denoting the vector component and capital letters denoting values associated with a particle, whose dynamics are governed by
     $$ \frac{dV_{i}(t)}{dt} = 0 \quad \frac{dX_{i}(t)}{dt} = V_{i}(t)= V_{i}(0) $$
     we can define a velocity field, some $u_i(x,t)$ which has a vector value at every position and time, and constrain it to match the particle's velocity when their positions and times coincide
     $$ u_i(X(t),t) = \frac{dX_{i}(t)}{dt} = V_{i}(0)$$
     We can derive the evolution equation for $u_i$ by differentiating and using the chain rule,
     $$ \frac{d}{dt} u_i(X(t),t) = \frac{\partial}{\partial t}u_i + \frac{dX_{j}(t)}{dt}\frac{\partial}{\partial x_j} u_i = 0$$
     which can be simplified using the constraint on $u_i(x,t)$ to get$$\partial_t u_i + u_j\partial_ju_i = 0 $$The partial differential equation, called Burger's Equation, above is valid for any position and time $(x,t)$ occupied by exactly one particle. If we release a single particle, then the equation is valid at all times, but vanishingly few positions. 
-    If we release a particle from every point in the domain, the equation is valid at every position, but up until the particles collide and $u(x,t)$ becomes multivalued (when one particle catches up to its neighbor with a different velocity).
+    If we release a particle from every point in the domain, the equation is valid at every position, but only up until the particles collide and $u(x,t)$ becomes multivalued (when one particle catches up to its neighbor with a different velocity).
   </p>
   <p>
-    Physically, we've discovered that when two particles occupy the same $(x,t)$, no interaction is short or weak enough to be neglected.
+    Physically, when two particles occupy the same $(x,t)$, no interaction is short or weak enough to be neglected.
     To resolve the collision problem, we must specify new information about the particles. In a pure PDEs approach, this is the point at which a variational principle is used to select the correct solution, but from a particle perspective we are simply choosing an interaction rule (to me at least, this is significantly more intuitive).
   </p>
 
